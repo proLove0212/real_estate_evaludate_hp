@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>不動産売却AIコンサルタント査定</title>
+</head>
+
+<body onload="loadData()">
+    <header class="l-container">
+        <h1>不動産売却AIコンサルタント査定</h1>
+    </header>
+
+    <main class="l-container">
+        <section class="p-select p-select--01">
+            <h2 class="p-select__ttl">Q1：種別</h2>
+            <ul class="p-select__items">
+                <li class="p-select__item js-q1 is-active">
+                    <p>一戸建て</p>
+                </li>
+                <li class="p-select__item js-q1">
+                    <p>土地</p>
+                </li>
+                <li class="p-select__item js-q1">
+                    <p>
+                        一棟アパート・<br>
+                        一棟マンション
+                    </p>
+                </li>
+                <li class="p-select__item js-q1">
+                    <p>店舗・工場・倉庫</p>
+                </li>
+                <li class="p-select__item js-q1">
+                    <p>一棟ビル</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="p-select p-select--02">
+            <h2 class="p-select__ttl">Q２：エリア</h2>
+            <ul class="p-select__items">
+                <li class="p-select__item js-q2 is-active" value="愛知県" >
+                    <p>愛知県</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+            </ul>
+        </section>
+
+        
+        <section class="p-select p-select--02">
+            <h2 class="p-select__ttl">Q２-1 エリア（市区町村） </h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-2">
+                    <select name="" id="">
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                    </select>
+                </li>
+                <li class="p-select__item is-input-2">
+                    <select name="" id="">
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                    </select>
+                </li>
+            </ul>
+        </section>
+
+        <section class="p-select p-select--03">
+            <h2 class="p-select__ttl">Q3：土地面積 </h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-2 js-q3 is-active">
+                    <div>
+                        <input type="text" name="" id="">
+                        <p>㎡</p>
+                    </div>
+                </li>
+                <li class="p-select__item is-input-2 js-q3 ">
+                    <div>
+                        <input type="text" name="" id="">
+                        <p>坪</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        
+        <section class="p-select p-select--04">
+            <h2 class="p-select__ttl">Q４：建物面積 </h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-2 js-q4 is-active">
+                    <div>
+                        <input type="text" name="" id="">
+                        <p>㎡</p>
+                    </div>
+                </li>
+                <li class="p-select__item is-input-2 js-q4 ">
+                    <div>
+                        <input type="text" name="" id="">
+                        <p>坪</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        
+        <section class="p-select p-select--05">
+            <h2 class="p-select__ttl">Q５：築年数 </h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-2 js-q5 is-active">
+                    <div>
+                        <input type="text" name="" id="">
+                        <p>年</p>
+                    </div>
+                </li>
+                <li class="p-select__item is-input-2 js-q5 ">
+                    <div>
+                        <p>築</p>
+                        <input type="text" class="pre-suf" name="" id="">
+                        <p>年</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="p-select p-select--06">
+            <h2 class="p-select__ttl">Q６：家賃収入</h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-1">
+                    <div>
+                        <input type="text" name="" id="">
+                        <p>万円/月</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="p-select p-select--07">
+            <h2 class="p-select__ttl">Q7：構造 </h2>
+            <ul class="p-select__items">
+                <li class="p-select__item js-q7 is-active">
+                    <p>木造</p>
+                </li>
+                <li class="p-select__item js-q7 ">
+                    <p>軽量鉄骨</p>
+                </li>
+                <li class="p-select__item js-q7 ">
+                    <p>重量鉄骨</p>
+                </li>
+                <li class="p-select__item js-q7 ">
+                    <p>RC</p>
+                </li>
+                <li class="p-select__item js-q7 ">
+                    <p>その他</p>
+                </li>
+            </ul>
+        </section>
+        
+        
+        <section class="p-select p-select--07">
+            <h2 class="p-select__ttl">査定金額</h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-2">
+                    <div>
+                        <input type="text" name="" id="">
+                        <p>万円</p>
+                    </div>
+                </li>
+                <li class="p-select__item is-input-2">
+                    <div>
+                        <input type="text" name="" id="">
+                        <p>万円</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="p-select p-select--07">
+            <h2 class="p-select__ttl">Q7 訪問査定を希望しますか？</h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-2">
+                    <p>はい</p>
+                </li>
+                <li class="p-select__item is-input-2">
+                    <p>いいえ</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="p-select p-select--08">
+            <h2 class="p-select__ttl">Q8 物件とのご関係は？ </h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-1">
+                    <select name="" id="">
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                    </select>
+                </li>
+            </ul>
+        </section>
+
+        <section class="p-select p-select--09">
+            <h2 class="p-select__ttl">Q9 依頼理由は？ </h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-1">
+                    <select name="" id="">
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                    </select>
+                </li>
+            </ul>
+        </section>
+
+        <section class="p-select p-select--10">
+            <h2 class="p-select__ttl">Q10 売却時期は？</h2>
+            <ul class="p-select__items">
+                <li class="p-select__item is-input-1">
+                    <select name="" id="">
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                        <option value="">関東地方</option>
+                    </select>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="p-contact">
+            <h2 class="p-contact__ttl">Contact</h2>
+            <div class="p-contact__items">
+                <div class="p-contact__item js-q11 is-active">
+                    <p>お名前</p>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="p-contact__item js-q11">
+                    <p>年齢</p>
+                    <div>
+                        <select name="" id="">
+                            <option value="20 代">20 代</option>
+                            <option value="30 代">30 代</option>
+                            <option value="40 代">40 代</option>
+                            <option value="50 代">50 代</option>
+                            <option value="60 代">60 代</option>
+                            <option value="70 代">70 代</option>
+                            <option value="80 代">80 代</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="p-contact__item js-q11">
+                    <p>性別</p>
+                    <div>
+                        <select name="" id="">
+                            <option value="男性">男性</option>
+                            <option value="男性">男性</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="p-contact__item js-q11">
+                    <p>ご連絡先のお電話番号</p>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="p-contact__item js-q11">
+                    <p>連絡のつきやすい時間帯</p>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="p-contact__item js-q11">
+                    <div class="button">
+                        確認
+                    </div>
+                    <div class="button button__danger">
+                        いいえ
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <table id="tblItems">
+                
+            </table>
+        </section>
+    </main>
+
+    <footer></footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+
+<script src="./assets/js/import.js"></script>
+<script src="./assets/js/common.js"></script>
+
+</html>
