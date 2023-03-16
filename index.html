@@ -9,7 +9,7 @@
     <title>不動産売却AIコンサルタント査定</title>
 </head>
 
-<body onload="loadData()">
+<body onload="loadPrefecture()">
     <header class="l-container">
         <h1>不動産売却AIコンサルタント査定</h1>
     </header>
@@ -41,25 +41,8 @@
 
         <section class="p-select p-select--02">
             <h2 class="p-select__ttl">Q２：エリア</h2>
-            <ul class="p-select__items">
-                <li class="p-select__item js-q2 is-active" value="愛知県" >
-                    <p>愛知県</p>
-                </li>
-                <li class="p-select__item js-q2 ">
-                    <p>関東地方</p>
-                </li>
-                <li class="p-select__item js-q2 ">
-                    <p>関東地方</p>
-                </li>
-                <li class="p-select__item js-q2 ">
-                    <p>関東地方</p>
-                </li>
-                <li class="p-select__item js-q2 ">
-                    <p>関東地方</p>
-                </li>
-                <li class="p-select__item js-q2 ">
-                    <p>関東地方</p>
-                </li>
+            <ul class="p-select__items" id="prefecture_selector">
+                
             </ul>
         </section>
 
@@ -68,21 +51,11 @@
             <h2 class="p-select__ttl">Q２-1 エリア（市区町村） </h2>
             <ul class="p-select__items">
                 <li class="p-select__item is-input-2">
-                    <select name="" id="">
-                        <option value="">関東地方</option>
-                        <option value="">関東地方</option>
-                        <option value="">関東地方</option>
-                        <option value="">関東地方</option>
-                        <option value="">関東地方</option>
+                    <select name="" id="city_selector">
                     </select>
                 </li>
                 <li class="p-select__item is-input-2">
-                    <select name="" id="">
-                        <option value="">関東地方</option>
-                        <option value="">関東地方</option>
-                        <option value="">関東地方</option>
-                        <option value="">関東地方</option>
-                        <option value="">関東地方</option>
+                    <select name="" id="village_selector">
                     </select>
                 </li>
             </ul>
