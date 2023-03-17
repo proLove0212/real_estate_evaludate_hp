@@ -27,36 +27,38 @@ function removeActive(param){
 }
 
 function hideSection(st){
-    var cnt_max = $(".p-select").length;
+    var cnt_max = $(".p-select").length+1;
     for (let index = st; index <= cnt_max; index++) {
         const element = $(`#card-${index}`);
         element.addClass("d-none");
+        element.removeClass("zoomInUp");
     }
+}
+
+function showSection(no){
+    $(`#card-${no}`).removeClass("d-none")
+    $(`#card-${no}`).addClass("zoomInUp")
+    removeActive(`.js-q${no}`);
+    window.scrollTo(0, document.body.scrollHeight);
+
+    if(no != 9)
+        $(`.js-q${no} input`).val("");
 }
 
 $(".js-q1").click(function(){
     r_est_type = $(this).data("value")
     removeActive(".js-q1");
 
-    if($(this).data("value") == "一棟アパート・一棟マンション" || $(this).data("value") == "一棟ビル" ){
-
-        $(this).addClass("is-active");
+    $(this).addClass("is-active");
         
-        hideSection(3);
-        $(`#card-2`).removeClass("d-none")
-    }else{
-        hideSection(2);
-    }
-
-    removeActive(".js-q2");
+    hideSection(3);
+    showSection(2)
 })
 
 
 $(".js-q3.btn").click(function(){
     city = $("#city_selector").val()
     village = $("#village_selector").val()
-
-    console.log(city, village)
 
     if(city == null || village == null){
         hideSection(4);
@@ -67,11 +69,7 @@ $(".js-q3.btn").click(function(){
     $(this).addClass("is-active");
 
     hideSection(5);
-    $(`#card-4`).removeClass("d-none")
-
-    removeActive(".js-q4");
-    $(".js-q4 input").val("");
-
+    showSection(4)
 })
 
 $(".js-q4.input").click(function(){
@@ -106,11 +104,7 @@ $(".js-q4.btn").click(function(){
     $(this).addClass("is-active");
     
     hideSection(6);
-    $(`#card-5`).removeClass("d-none")
-
-    
-    removeActive(".js-q5");
-    $(".js-q5 input").val("");
+    showSection(5)
 })
 
 $(".js-q5.input").click(function(){
@@ -143,11 +137,7 @@ $(".js-q5.btn").click(function(){
     $(this).addClass("is-active");
     
     hideSection(7);
-    $(`#card-6`).removeClass("d-none")
-
-    
-    removeActive(".js-q6");
-    $(".js-q6 input").val("");
+    showSection(6)
 })
 
 
@@ -181,11 +171,7 @@ $(".js-q6.btn").click(function(){
     $(this).addClass("is-active");
     
     hideSection(8);
-    $(`#card-7`).removeClass("d-none")
-
-    
-    removeActive(".js-q7");
-    $(".js-q7 input").val("");
+    showSection(7)
 })
 
 $(".js-q7.is-input-2div3").click(function(){
@@ -238,7 +224,7 @@ $(".js-q7.btn").click(function(){
 
 
         hideSection(9);
-        $(`#card-8`).removeClass("d-none")
+        showSection(8)
     }else{
 
         var g_area_temp = ground_area
@@ -252,8 +238,7 @@ $(".js-q7.btn").click(function(){
         $(".js-q9.is-input-2div3 input").val(`${min_temp.toFixed(2)} ~ ${max_temp.toFixed(2)}`)
 
         hideSection(10);
-
-        $(`#card-9`).removeClass("d-none")
+        showSection(9)
     }
 })
 
@@ -264,7 +249,7 @@ $(".js-q8").click(function(){
     $(this).addClass("is-active");
 
     hideSection(10);
-    $(`#card-9`).removeClass("d-none")
+    showSection(9)
 })
 
 $(".js-q9.btn").click(function(){
@@ -272,7 +257,7 @@ $(".js-q9.btn").click(function(){
     $(this).addClass("is-active");
 
     hideSection(11);
-    $(`#card-10`).removeClass("d-none")
+    showSection(10)
 })
 
 $(".js-q10").click(function(){
@@ -281,11 +266,10 @@ $(".js-q10").click(function(){
 
     if($(this).data("value") == "はい"){
         hideSection(12);
-        $(`#card-11`).removeClass("d-none")
+        showSection(11)
     }else{
         hideSection(2);
-        removeActive(".js-q1");
-        $(`#card-1`).removeClass("d-none")
+        showSection(1)
     }
 })
 
@@ -294,7 +278,7 @@ $(".js-q11.btn").click(function(){
     $(this).addClass("is-active");
 
     hideSection(13);
-    $(`#card-12`).removeClass("d-none")
+    showSection(12)
 
     relation = $(this).children("select").val()
 })
@@ -304,7 +288,7 @@ $(".js-q12.btn").click(function(){
     $(this).addClass("is-active");
 
     hideSection(14);
-    $(`#card-13`).removeClass("d-none")
+    showSection(13)
     
     reason = $(this).children("select").val()
 })
@@ -315,6 +299,7 @@ $(".js-q13.btn").click(function(){
 
     hideSection(15);
     $(`#card-14`).removeClass("d-none")
+    $(`#card-14`).addClass("zoomInUp")
 
     when = $(this).children("select").val()
 })
@@ -326,8 +311,29 @@ $(".js-q14.btn").click(function(){
 $("#city_selector").change(function(){
     refreshVillage($("#city_selector").val())
     removeActive(".js-q3");
+    hideSection(4)
 })
 
 $("#village_selector").change(function(){
     removeActive(".js-q3");
+    hideSection(4)
+})
+
+
+$("#relation_selector").change(function(){
+    hideSection(12)  
+    showSection(11)  
+})
+
+
+$("#reason_selector").change(function(){
+    hideSection(13)  
+    showSection(12)  
+
+})
+
+
+$("#when_selector").change(function(){
+    hideSection(14)  
+    showSection(13)  
 })

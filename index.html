@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>不動産売却AIコンサルタント査定</title>
+
+    <link rel="shortcut icon" href="./assets/images/real-estate.svg" type="image/x-icon">
 </head>
 
 <body>
     <header class="l-container">
-        <h1>不動産売却AIコンサルタント査定</h1>
+        <h1><img src="./assets/images/real-estate.svg" alt="担当者の提案力No.1の高い評価をいただきました。※2022年オリコン顧客満足度R調査 不動産仲介 購入 マンション 担当者の提案力 第1位" class="switch" data-xblocker="passed" style="visibility: visible;">不動産売却AIコンサルタント査定</h1>
     </header>
 
+    <section class="bg">
+        <div class="l-container">
+            <p class="fv__oricon"><img src="./assets/images/fv_sp.png" alt="担当者の提案力No.1の高い評価をいただきました。※2022年オリコン顧客満足度R調査 不動産仲介 購入 マンション 担当者の提案力 第1位" class="switch" data-xblocker="passed" style="visibility: visible;"></p>
+        </div>
+    </section>
+
     <main class="l-container" id="js_toggle-folder">
-        <section class="p-select p-select--01" id="card-1">
-            <h2 class="p-select__ttl">Q1：種別</h2>
+        <section class="p-select p-select--01 wow fadeInUp" id="card-1">
+            <h2 class="p-select__ttl">種別</h2>
             <ul class="p-select__items">
                 <li class="p-select__item js-q1" data-value="一戸建て">
                     <p>一戸建て</p>
@@ -40,8 +48,8 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--02 d-none" id="card-2">
-            <h2 class="p-select__ttl">Q２：エリア</h2>
+        <section class="p-select p-select--02 d-none wow" id="card-2">
+            <h2 class="p-select__ttl">エリア</h2>
             <ul class="p-select__items" id="prefecture_selector">
                 <li class="p-select__item js-q2 is-active" data-value="愛知県" >
                     <p>愛知県</p>
@@ -65,8 +73,8 @@
         </section>
 
         
-        <section class="p-select p-select--02 d-none" id="card-3">
-            <h2 class="p-select__ttl">Q２-1 エリア（市区町村） </h2>
+        <section class="p-select p-select--02 d-none wow" id="card-3">
+            <h2 class="p-select__ttl">エリア（市区町村） </h2>
             <ul class="p-select__items">
                 <li class="p-select__item js-q3">
                     <select name="" id="city_selector">
@@ -82,8 +90,8 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--03 d-none"id="card-4">
-            <h2 class="p-select__ttl">Q3：土地面積 </h2>
+        <section class="p-select p-select--03 d-none wow"id="card-4">
+            <h2 class="p-select__ttl">土地面積 </h2>
             <ul class="p-select__items">
                 <li class="p-select__item js-q4 input">
                     <div>
@@ -104,8 +112,8 @@
         </section>
 
         
-        <section class="p-select p-select--04 d-none" id="card-5">
-            <h2 class="p-select__ttl">Q４：建物面積 </h2>
+        <section class="p-select p-select--04 d-none wow" id="card-5">
+            <h2 class="p-select__ttl">建物面積 </h2>
             <ul class="p-select__items">
                 <li class="p-select__item js-q5 input">
                     <div>
@@ -126,8 +134,8 @@
         </section>
         
         
-        <section class="p-select p-select--05 d-none" id="card-6">
-            <h2 class="p-select__ttl">Q５：築年数 </h2>
+        <section class="p-select p-select--05 d-none wow" id="card-6">
+            <h2 class="p-select__ttl">築年数 </h2>
             <ul class="p-select__items">
                 <li class="p-select__item  js-q6 input">
                     <div>
@@ -148,8 +156,8 @@
             </ul>
         </section>
         
-        <section class="p-select p-select--06 d-none" id="card-7">
-            <h2 class="p-select__ttl">Q６：家賃収入</h2>
+        <section class="p-select p-select--06 d-none wow" id="card-7">
+            <h2 class="p-select__ttl">家賃収入</h2>
             <ul class="p-select__items">
                 <li class="p-select__item is-input-2div3 js-q7">
                     <div>
@@ -163,8 +171,8 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--07 d-none wow fadeInUp" id="card-8">
-            <h2 class="p-select__ttl">Q7：構造 </h2>
+        <section class="p-select p-select--07 d-none wow" id="card-8">
+            <h2 class="p-select__ttl">構造 </h2>
             <ul class="p-select__items">
                 <li class="p-select__item js-q8" data-value="木造" >
                     <p>木造</p>
@@ -185,7 +193,7 @@
         </section>
         
         
-        <section class="p-select p-select--07 d-none" id="card-9">
+        <section class="p-select p-select--07 d-none wow" id="card-9">
             <h2 class="p-select__ttl">査定金額</h2>
             <ul class="p-select__items">
                 <li class="p-select__item js-q9 is-input-2div3">
@@ -200,8 +208,8 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--07 d-none" id="card-10">
-            <h2 class="p-select__ttl">Q7 訪問査定を希望しますか？</h2>
+        <section class="p-select p-select--07 d-none wow" id="card-10">
+            <h2 class="p-select__ttl">訪問査定を希望しますか？</h2>
             <ul class="p-select__items">
                 <li class="p-select__item is-input-1div2 js-q10" data-value="はい">
                     <p>はい</p>
@@ -212,11 +220,11 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--08 d-none" id="card-11">
-            <h2 class="p-select__ttl">Q8 物件とのご関係は？ </h2>
+        <section class="p-select p-select--08 d-none wow" id="card-11">
+            <h2 class="p-select__ttl">物件とのご関係は？ </h2>
             <ul class="p-select__items">
                 <li class="p-select__item is-input-2div3 js-q11">
-                    <select name="" id="">
+                    <select name="" id="relation_selector">
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
@@ -230,11 +238,11 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--09 d-none" id="card-12">
-            <h2 class="p-select__ttl">Q9 依頼理由は？ </h2>
+        <section class="p-select p-select--09 d-none wow" id="card-12">
+            <h2 class="p-select__ttl">依頼理由は？ </h2>
             <ul class="p-select__items">
                 <li class="p-select__item is-input-2div3 js-q12">
-                    <select name="" id="">
+                    <select name="" id="reason_selector">
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
@@ -248,11 +256,11 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--10 d-none" id="card-13">
-            <h2 class="p-select__ttl">Q10 売却時期は？</h2>
+        <section class="p-select p-select--10 d-none wow" id="card-13">
+            <h2 class="p-select__ttl">売却時期は？</h2>
             <ul class="p-select__items">
                 <li class="p-select__item is-input-2div3 js-q13">
-                    <select name="" id="">
+                    <select name="" id="when_selector">
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
@@ -266,7 +274,7 @@
             </ul>
         </section>
         
-        <section class="p-contact d-none" id="card-14">
+        <section class="p-contact d-none wow" id="card-14">
             <h2 class="p-contact__ttl">Contact</h2>
             <div class="p-contact__items">
                 <div class="p-contact__item js-q14 is-active">
@@ -322,7 +330,7 @@
             </div>
         </section>
 
-        <section>
+        <section style="height: 100px">
             <table id="tblItems">
                 
             </table>
@@ -334,7 +342,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="./assets/js/anim.js"></script>
 <script src="./assets/js/import.js"></script>
 <script src="./assets/js/common.js"></script>

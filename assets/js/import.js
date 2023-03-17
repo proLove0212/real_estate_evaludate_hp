@@ -84,12 +84,11 @@ function loadPrefecture() {
             village = ""
             profecture = $(this).data("value")
 
-            removeActive(".js-q3");
             removeActive(".js-q2");
             $(this).addClass("is-active");
                 
             hideSection(4);
-            $(`#card-3`).removeClass("d-none")
+            showSection(3)
 
             var name = $(this).data("value");        
             loadData(name)
