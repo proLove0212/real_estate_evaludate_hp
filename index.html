@@ -9,13 +9,13 @@
     <title>不動産売却AIコンサルタント査定</title>
 </head>
 
-<body onload="loadPrefecture()">
+<body>
     <header class="l-container">
         <h1>不動産売却AIコンサルタント査定</h1>
     </header>
 
-    <main class="l-container">
-        <section class="p-select p-select--01">
+    <main class="l-container" id="js_toggle-folder">
+        <section class="p-select p-select--01" id="card-1">
             <h2 class="p-select__ttl">Q1：種別</h2>
             <ul class="p-select__items">
                 <li class="p-select__item js-q1 is-active">
@@ -39,76 +39,102 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--02">
+        <section class="p-select p-select--02 d-none" id="card-2">
             <h2 class="p-select__ttl">Q２：エリア</h2>
             <ul class="p-select__items" id="prefecture_selector">
-                
+                <li class="p-select__item js-q2 is-active" data-value="愛知県" >
+                    <p>愛知県</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
+                <li class="p-select__item js-q2 ">
+                    <p>関東地方</p>
+                </li>
             </ul>
         </section>
 
         
-        <section class="p-select p-select--02">
+        <section class="p-select p-select--02 d-none" id="card-3">
             <h2 class="p-select__ttl">Q２-1 エリア（市区町村） </h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-2">
+                <li class="p-select__item js-q3">
                     <select name="" id="city_selector">
                     </select>
                 </li>
-                <li class="p-select__item is-input-2">
+                <li class="p-select__item js-q3">
                     <select name="" id="village_selector">
                     </select>
                 </li>
+                <li class="p-select__item js-q3 ">
+                    <p>はい</p>
+                </li>
             </ul>
         </section>
 
-        <section class="p-select p-select--03">
+        <section class="p-select p-select--03 d-none"id="card-4">
             <h2 class="p-select__ttl">Q3：土地面積 </h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-2 js-q3 is-active">
+                <li class="p-select__item js-q4 is-active">
                     <div>
                         <input type="text" name="" id="">
                         <p>㎡</p>
                     </div>
                 </li>
-                <li class="p-select__item is-input-2 js-q3 ">
+                <li class="p-select__item js-q4 ">
                     <div>
                         <input type="text" name="" id="">
                         <p>坪</p>
                     </div>
+                </li>
+                <li class="p-select__item js-q4 ">
+                    <p>はい</p>
                 </li>
             </ul>
         </section>
 
         
-        <section class="p-select p-select--04">
+        <section class="p-select p-select--04 d-none" id="card-5">
             <h2 class="p-select__ttl">Q４：建物面積 </h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-2 js-q4 is-active">
+                <li class="p-select__item is-input-2 js-q5 is-active">
                     <div>
                         <input type="text" name="" id="">
                         <p>㎡</p>
                     </div>
                 </li>
-                <li class="p-select__item is-input-2 js-q4 ">
+                <li class="p-select__item is-input-2 js-q5 ">
                     <div>
                         <input type="text" name="" id="">
                         <p>坪</p>
                     </div>
                 </li>
+                <li class="p-select__item js-q5 ">
+                    <p>はい</p>
+                </li>
             </ul>
         </section>
         
         
-        <section class="p-select p-select--05">
+        <section class="p-select p-select--05 d-none" id="card-6">
             <h2 class="p-select__ttl">Q５：築年数 </h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-2 js-q5 is-active">
+                <li class="p-select__item is-input-2 js-q6 is-active">
                     <div>
                         <input type="text" name="" id="">
                         <p>年</p>
                     </div>
                 </li>
-                <li class="p-select__item is-input-2 js-q5 ">
+                <li class="p-select__item is-input-2 js-q6 ">
                     <div>
                         <p>築</p>
                         <input type="text" class="pre-suf" name="" id="">
@@ -118,10 +144,10 @@
             </ul>
         </section>
         
-        <section class="p-select p-select--06">
+        <section class="p-select p-select--06 d-none" id="card-7">
             <h2 class="p-select__ttl">Q６：家賃収入</h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-1">
+                <li class="p-select__item is-input-1 js-q7">
                     <div>
                         <input type="text" name="" id="">
                         <p>万円/月</p>
@@ -130,38 +156,38 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--07">
+        <section class="p-select p-select--07 d-none" id="card-8">
             <h2 class="p-select__ttl">Q7：構造 </h2>
             <ul class="p-select__items">
-                <li class="p-select__item js-q7 is-active">
+                <li class="p-select__item js-q8 is-active">
                     <p>木造</p>
                 </li>
-                <li class="p-select__item js-q7 ">
+                <li class="p-select__item js-q8 ">
                     <p>軽量鉄骨</p>
                 </li>
-                <li class="p-select__item js-q7 ">
+                <li class="p-select__item js-q8 ">
                     <p>重量鉄骨</p>
                 </li>
-                <li class="p-select__item js-q7 ">
+                <li class="p-select__item js-q8 ">
                     <p>RC</p>
                 </li>
-                <li class="p-select__item js-q7 ">
+                <li class="p-select__item js-q8 ">
                     <p>その他</p>
                 </li>
             </ul>
         </section>
         
         
-        <section class="p-select p-select--07">
+        <section class="p-select p-select--07 d-none" id="card-9">
             <h2 class="p-select__ttl">査定金額</h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-2">
+                <li class="p-select__item is-input-2 js-q9">
                     <div>
                         <input type="text" name="" id="">
                         <p>万円</p>
                     </div>
                 </li>
-                <li class="p-select__item is-input-2">
+                <li class="p-select__item is-input-2 js-q9">
                     <div>
                         <input type="text" name="" id="">
                         <p>万円</p>
@@ -170,22 +196,22 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--07">
+        <section class="p-select p-select--07 d-none" id="card-10">
             <h2 class="p-select__ttl">Q7 訪問査定を希望しますか？</h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-2">
+                <li class="p-select__item is-input-2 js-q10">
                     <p>はい</p>
                 </li>
-                <li class="p-select__item is-input-2">
+                <li class="p-select__item is-input-2 js-q10">
                     <p>いいえ</p>
                 </li>
             </ul>
         </section>
 
-        <section class="p-select p-select--08">
+        <section class="p-select p-select--08 d-none" id="card-11">
             <h2 class="p-select__ttl">Q8 物件とのご関係は？ </h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-1">
+                <li class="p-select__item is-input-1 js-q11">
                     <select name="" id="">
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
@@ -197,10 +223,10 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--09">
+        <section class="p-select p-select--09 d-none" id="card-12">
             <h2 class="p-select__ttl">Q9 依頼理由は？ </h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-1">
+                <li class="p-select__item is-input-1 js-q12">
                     <select name="" id="">
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
@@ -212,10 +238,10 @@
             </ul>
         </section>
 
-        <section class="p-select p-select--10">
+        <section class="p-select p-select--10 d-none" id="card-13">
             <h2 class="p-select__ttl">Q10 売却時期は？</h2>
             <ul class="p-select__items">
-                <li class="p-select__item is-input-1">
+                <li class="p-select__item is-input-1 js-q13">
                     <select name="" id="">
                         <option value="">関東地方</option>
                         <option value="">関東地方</option>
@@ -227,16 +253,16 @@
             </ul>
         </section>
         
-        <section class="p-contact">
+        <section class="p-contact d-none" id="card-14">
             <h2 class="p-contact__ttl">Contact</h2>
             <div class="p-contact__items">
-                <div class="p-contact__item js-q11 is-active">
+                <div class="p-contact__item js-q14 is-active">
                     <p>お名前</p>
                     <div>
                         <input type="text">
                     </div>
                 </div>
-                <div class="p-contact__item js-q11">
+                <div class="p-contact__item js-q14">
                     <p>年齢</p>
                     <div>
                         <select name="" id="">
@@ -250,7 +276,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="p-contact__item js-q11">
+                <div class="p-contact__item js-q14">
                     <p>性別</p>
                     <div>
                         <select name="" id="">
@@ -260,19 +286,19 @@
                         </select>
                     </div>
                 </div>
-                <div class="p-contact__item js-q11">
+                <div class="p-contact__item js-q14">
                     <p>ご連絡先のお電話番号</p>
                     <div>
                         <input type="text">
                     </div>
                 </div>
-                <div class="p-contact__item js-q11">
+                <div class="p-contact__item js-q14">
                     <p>連絡のつきやすい時間帯</p>
                     <div>
                         <input type="text">
                     </div>
                 </div>
-                <div class="p-contact__item js-q11">
+                <div class="p-contact__item js-q14">
                     <div class="button">
                         確認
                     </div>
@@ -295,7 +321,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<!-- <script src="./assets/js/anim.js"></script> -->
 <script src="./assets/js/import.js"></script>
 <script src="./assets/js/common.js"></script>
 

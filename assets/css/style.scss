@@ -9,6 +9,10 @@ h1 {
     text-align: center;
 }
 
+.d-none{
+    display: none;
+}
+
 .p-select{
     padding-block: 30px;
     &__ttl{
@@ -192,6 +196,18 @@ h1 {
         &.is-active{
             div{
                 border-bottom: 2px solid green;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 550px){
+    .p-select{
+        &__item{
+            width: 100%;
+            &.is-input-2{
+                width: 100%;
             }
         }
     }
