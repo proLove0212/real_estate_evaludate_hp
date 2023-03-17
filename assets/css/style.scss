@@ -112,8 +112,17 @@ h1 {
                 }
             }
         }
-        &.is-input-2{
-            width: calc((100% - 20px) / 2);
+        &.is-input-2div3{
+            width: calc(20px + (100% - 40px)*2/3);
+            input{
+                width: calc(100% - 100px);
+            }
+            p{
+                width: 100px;
+            }
+        }
+        &.is-input-1div2{
+            width: calc((100% - 20px)/2);
         }
     }
 }
@@ -206,7 +215,7 @@ h1 {
     .p-select{
         &__item{
             width: 100%;
-            &.is-input-2{
+            &.is-input-2div3{
                 width: 100%;
             }
         }

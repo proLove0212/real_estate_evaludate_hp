@@ -143,7 +143,16 @@ h1 {
 .p-select__item.is-input-1 div p {
   width: 100px;
 }
-.p-select__item.is-input-2 {
+.p-select__item.is-input-2div3 {
+  width: calc(20px + (100% - 40px) * 2 / 3);
+}
+.p-select__item.is-input-2div3 input {
+  width: calc(100% - 100px);
+}
+.p-select__item.is-input-2div3 p {
+  width: 100px;
+}
+.p-select__item.is-input-1div2 {
   width: calc((100% - 20px) / 2);
 }
 
@@ -228,7 +237,7 @@ h1 {
   .p-select__item {
     width: 100%;
   }
-  .p-select__item.is-input-2 {
+  .p-select__item.is-input-2div3 {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
