@@ -31,7 +31,12 @@ function loadData(name) {
             if(store[row['市区町村']]){
                 store[row['市区町村']][row['町字']] = {
                     "最低土地値" : row['最低土地値'],
-                    "最高土地値" : row['最高土地値']
+                    "最高土地値" : row['最高土地値'],
+                    "～5 年" : row['～5 年'],
+                    "6～10 年" : row['6～10 年'],
+                    "11～20 年" : row['11～20 年'],
+                    "21～30 年" : row['21～30 年'],
+                    "30 年以上" : row['30 年以上']
                 }
             }else{
                 store[row['市区町村']] = {}
@@ -67,22 +72,25 @@ function loadPrefecture() {
 
         XL_row_object.forEach(function(row){
             if(prefectures.length == 0){
-                $("#prefecture_selector").append("<li class='p-select__item js-q2 is-active' data-value='"+row['都道府県']+"' ><p>" + row['都道府県'] + "</p></li>")
-                
                 loadData(row['都道府県'])
-            }else{
-                $("#prefecture_selector").append("<li class='p-select__item js-q2' data-value='"+row['都道府県']+"' ><p>" + row['都道府県'] + "</p></li>")
             }
+            $("#prefecture_selector").append("<li class='p-select__item js-q2' data-value='"+row['都道府県']+"' ><p>" + row['都道府県'] + "</p></li>")
             prefectures.push(row['都道府県'])
         })
 
         
         $(".js-q2").click(function(){
+            city = ""
+            village = ""
+            profecture = $(this).data("value")
+
+            removeActive(".js-q3");
             removeActive(".js-q2");
             $(this).addClass("is-active");
                 
             hideSection(4);
             $(`#card-3`).removeClass("d-none")
+
             var name = $(this).data("value");        
             loadData(name)
         })
