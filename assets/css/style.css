@@ -165,85 +165,37 @@ header h1 img {
 .p-select__item.is-input-2div3 p {
   width: 100px;
 }
+.p-select__item.is-input-2div3.full input {
+  width: 100%;
+}
+.p-select__item.is-input-2div3.full select {
+  width: 100%;
+}
 .p-select__item.is-input-1div2 {
   width: calc((100% - 20px) / 2);
 }
 
-.p-contact {
-  padding-block: 30px;
-}
-.p-contact__ttl {
-  font-size: 24px;
-  position: relative;
-  padding-left: 40px;
-}
-.p-contact__ttl::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 2px;
-  background: black;
-}
-.p-contact__items {
-  margin-top: 40px;
-  padding: 0px 20px;
-}
-.p-contact__item {
+.button_wrapper {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  gap: 20px;
-  display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  min-height: 50px;
-  cursor: pointer;
 }
-.p-contact__item:hover {
-  opacity: 0.8;
-}
-.p-contact__item p {
-  font-size: 18px;
-  width: 80px;
-}
-.p-contact__item div {
-  width: calc(100% - 100px);
-  border-bottom: 2px solid gray;
-}
-.p-contact__item div input, .p-contact__item div select {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  color: black;
-  border: none;
-}
-.p-contact__item div.button {
-  width: 100%;
-  max-width: 250px;
+.button_wrapper .button {
+  width: 200px;
   background: green;
-  border: solid 2px white !important;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px white;
+  border-radius: 50px;
   filter: drop-shadow(0 2px 4px #ccc);
   height: 50px;
+  font-size: 18px;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 }
-.p-contact__item div.button:hover {
+.button_wrapper .button:hover {
   opacity: 0.8;
-}
-.p-contact__item div.button__danger {
-  background: orangered;
-}
-.p-contact__item.is-active div {
-  border-bottom: 2px solid green;
 }
 
 @media (max-width: 550px) {
@@ -270,7 +222,7 @@ header h1 img {
 }
 @media (max-width: 1024px) {
   .bg img {
-    max-width: 750px;
+    max-width: 650px;
     width: 100%;
   }
 }

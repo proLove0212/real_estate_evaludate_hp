@@ -22,12 +22,19 @@ var relation = ""
 var reason = ""
 var when = ""
 
+var client_name = ""
+var age = ""
+var gender = ""
+var email = ""
+var phone = ""
+var timezone = ""
+
 function removeActive(param){
     $(param).removeClass("is-active")
 }
 
 function hideSection(st){
-    var cnt_max = $(".p-select").length+1;
+    var cnt_max = $(".p-select").length;
     for (let index = st; index <= cnt_max; index++) {
         const element = $(`#card-${index}`);
         element.addClass("d-none");
@@ -36,13 +43,37 @@ function hideSection(st){
 }
 
 function showSection(no){
+
     $(`#card-${no}`).removeClass("d-none")
-    $(`#card-${no}`).addClass("zoomInUp")
-    removeActive(`.js-q${no}`);
+
+    $(`#card-${no}`).addClass("fadeInDown")
+
     window.scrollTo(0, document.body.scrollHeight);
 
+    removeActive(`.js-q${no}`);
     if(no != 9)
         $(`.js-q${no} input`).val("");
+}
+
+function showMessage(){
+    $("#msg_area").removeClass("d-none");
+    $("#msg_req").removeClass("d-none");
+    $("#msg_req").addClass("fadeInLeft");
+
+    setTimeout(() => {
+        $("#msg_res").removeClass("d-none");
+        $("#msg_res").addClass("fadeInRight")
+        window.scrollTo(0, document.body.scrollHeight);
+
+            
+        setTimeout(() => {
+            $("#msg_ok").removeClass("d-none");
+            $("#msg_ok").addClass("fadeInLeft")
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 1000);
+    }, 1000);
+
+    
 }
 
 $(".js-q1").click(function(){
@@ -86,8 +117,13 @@ $(".js-q4.input").click(function(){
 })
 
 $(".js-q4.btn").click(function(){
+    
+    if(isNaN($("#g_area_m").val()*1) || isNaN($("#g_area_p").val()*1)){
+        return;
+    }
+
     if($("#g_area_m").val()*1 == 0 && $("#g_area_p").val()*1 == 0){
-        return
+        return;
     }
 
     if($("#g_area_m").val()*1 == 0){
@@ -120,16 +156,21 @@ $(".js-q5.input").click(function(){
 })
 
 $(".js-q5.btn").click(function(){
+    
+    if(isNaN($("#b_area_m").val()*1) || isNaN($("#b_area_p").val()*1)){
+        return;
+    }
+
     if($("#b_area_m").val()*1 == 0 && $("#b_area_p").val()*1 == 0){
         return
     }
 
     if($("#b_area_m").val()*1 == 0){
-        building_area = $("#b_area_m").val()*1
+        building_area = $("#b_area_p").val()*1
         b_area_type = 1
     }
     if($("#b_area_p").val()*1 == 0){
-        building_area = $("#b_area_p").val()*1
+        building_area = $("#b_area_m").val()*1
         b_area_type = 0
     }
 
@@ -154,6 +195,10 @@ $(".js-q6.input").click(function(){
 })
 
 $(".js-q6.btn").click(function(){
+    if(isNaN($("#b_year_1").val()*1) || isNaN($("#b_year_1").val()*1)){
+        return;
+    }
+
     if($("#b_year_1").val()*1 == 0 && $("#b_year_2").val()*1 == 0){
         return
     }
@@ -181,7 +226,10 @@ $(".js-q7.is-input-2div3").click(function(){
     hideSection(8);
 })
 
-$(".js-q7.btn").click(function(){    
+$(".js-q7.btn").click(function(){   
+    if(isNaN($("#b_price").val()*1)){
+        return;
+    } 
     if($("#b_price").val()*1 == 0){
         return
     }
@@ -239,6 +287,7 @@ $(".js-q7.btn").click(function(){
 
         hideSection(10);
         showSection(9)
+        structure = ""
     }
 })
 
@@ -280,7 +329,7 @@ $(".js-q11.btn").click(function(){
     hideSection(13);
     showSection(12)
 
-    relation = $(this).children("select").val()
+    relation = $("#relation_selector").val()
 })
 
 $(".js-q12.btn").click(function(){
@@ -290,7 +339,7 @@ $(".js-q12.btn").click(function(){
     hideSection(14);
     showSection(13)
     
-    reason = $(this).children("select").val()
+    reason = $("#reason_selector").val()
 })
 
 $(".js-q13.btn").click(function(){
@@ -301,11 +350,192 @@ $(".js-q13.btn").click(function(){
     $(`#card-14`).removeClass("d-none")
     $(`#card-14`).addClass("zoomInUp")
 
-    when = $(this).children("select").val()
+    when = $("#when_selector").val()
+})
+
+$(".js-q14.is-input-2div3").click(function(){
+    removeActive(".js-q14");
+    $(this).addClass("is-active");
+    
+    hideSection(15);
 })
 
 $(".js-q14.btn").click(function(){
+    if($("#name").val() == "")
+        return;
     
+    client_name = $("#name").val()
+
+    removeActive(".js-q14");
+    $(this).addClass("is-active");
+
+    hideSection(16);
+    showSection(15)
+})
+
+
+$(".js-q15.btn").click(function(){
+    age = $("#age").val()
+
+    removeActive(".js-q15");
+    $(this).addClass("is-active");
+
+    hideSection(17);
+    showSection(16)
+})
+
+
+$(".js-q16.btn").click(function(){
+    gender = $("#gender").val()
+
+    removeActive(".js-q16");
+    $(this).addClass("is-active");
+
+    hideSection(18);
+    showSection(17)
+})
+
+
+$(".js-q17.is-input-2div3").click(function(){
+    removeActive(".js-q17");
+    $(this).addClass("is-active");
+    
+    hideSection(18);
+})
+
+$(".js-q17.btn").click(function(){
+    if($("#email").val() == "")
+        return;
+    
+    if(!String($("#email").val()).toLowerCase().match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )){
+        return;
+    }
+
+    email = $("#email").val()
+
+    removeActive(".js-q17");
+    $(this).addClass("is-active");
+
+    hideSection(19);
+    showSection(18)
+})
+
+
+
+$(".js-q18.is-input-2div3").click(function(){
+    removeActive(".js-q18");
+    $(this).addClass("is-active");
+    
+    hideSection(19);
+})
+
+$(".js-q18.btn").click(function(){
+    if($("#phone").val().length == 0)
+        return;
+    
+    phone = $("#phone").val()
+
+    removeActive(".js-q18");
+    $(this).addClass("is-active");
+
+    hideSection(20);
+    showSection(19)
+})
+
+
+
+$(".js-q19.is-input-2div3").click(function(){
+    removeActive(".js-q19");
+    $(this).addClass("is-active");
+    
+    hideSection(20);
+})
+
+$(".js-q19.btn").click(function(){
+    if($("#timezone").val().length == 0)
+        return;
+    
+    timezone = $("#timezone").val()
+
+    removeActive(".js-q19");
+    $(this).addClass("is-active");
+
+    showSection(20)
+})
+
+
+
+$(".js-q20").click(function(){
+    if($(this).data("value") == "はい"){
+
+        $.ajax({
+            url: "contact-form.php",
+            method: "POST",
+            data: {
+                "client_name" : client_name,
+                "age" : age,
+                "gender" : gender,
+                "email" : email,
+                "phone" : phone,
+                "timezone": timezone,
+                "r_est_type" : r_est_type,
+                "location" : `${profecture} ${city} ${village}`,
+                "ground_area" : `${ground_area} ${g_area_type == 0 ? '㎡' : '坪'}`,
+                "building_area" : `${building_area} ${b_area_type == 0 ? '㎡' : '坪'}`,
+                "building_year" : `${b_year_type == 0 ? '' : '築'} ${b_year} 年`,
+                "b_price" : `${b_price} 万円/月`,
+                "structure" : `${structure}`,
+                "relation" : `${relation}`,
+                "reason" : `${reason}`,
+                "when" : `${when}`,
+            },
+        })
+
+        var msg_req = `
+        お名前: ${client_name} <br>
+        年齢: ${age} <br>
+        性別: ${gender} <br>
+        メールアドレス？: ${email} <br>
+        ご連絡先のお電話番号: ${phone} <br>
+        連絡のつきやすい時間帯: ${timezone} <br>
+        <br>
+        ==================================<br>
+        <br>
+        種別: ${r_est_type}<br>
+        エリア（市区町村以下）: ${profecture} ${city} ${village}<br>
+        土地面積: ${ground_area} ${g_area_type == 0 ? '㎡' : '坪'}<br>
+        建物面積: ${building_area} ${b_area_type == 0 ? '㎡' : '坪'}<br>
+        築年数: ${b_year_type == 0 ? '' : '築'} ${b_year} 年 <br>
+        家賃収入: ${b_price} 万円/月 <br>
+        構造: ${structure} <br>
+        物件とのご関係: ${relation} <br>
+        依頼理由: ${reason} <br>
+        売却時期: ${when} <br>
+        `
+
+
+        var msg_res = `ありがとうございました。<br>
+            担当：小田嶋（おだしま）より、 <br>
+            2 営業日以内にお電話にてご訪問の予定を調整させて頂<br>
+            くためご連絡させていただきます。`
+
+        $("#msg_req").html(msg_req)
+        $("#msg_res").html(msg_res)
+
+        
+        hideSection(1)
+        showMessage();
+
+    }else{
+        hideSection(2)
+        showSection(1)
+    }
+})
+
+$("#msg_ok").click(function(){
+    window.location.href=""
 })
 
 $("#city_selector").change(function(){

@@ -1,0 +1,54 @@
+.wrapper {
+  margin-top: 100px;
+}
+.wrapper ul {
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapper ul li {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: orange;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px -2px rgba(60, 51, 176, 0.2);
+  clear: both;
+  color: black;
+  cursor: pointer;
+}
+.wrapper ul li:nth-child(odd) {
+  float: left;
+}
+.wrapper ul li:nth-child(odd):after {
+  left: -15px;
+  border-top-color: orange;
+  border-left: 15px solid transparent;
+}
+.wrapper ul li:nth-child(even) {
+  float: right;
+  color: rgba(255, 255, 255, 0.9);
+  background: green;
+}
+.wrapper ul li:nth-child(even):after {
+  right: -15px;
+  border-top-color: green;
+  border-right: 15px solid transparent;
+}
+.wrapper ul li:before, .wrapper ul li:after {
+  position: absolute;
+  content: "";
+}
+.wrapper ul li:before {
+  width: 45px;
+  height: 45px;
+  top: 0;
+  border-radius: 50%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.wrapper ul li:after {
+  width: 0;
+  height: 0;
+  top: 15px;
+  border-top: 15px solid green;
+}/*# sourceMappingURL=chat.css.map */
